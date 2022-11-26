@@ -1,42 +1,49 @@
+
 import { getByAltText, getByTestId, render, screen } from '@testing-library/react';
 import App from './App';
 
+
 test('renders learn react link', () => {
 render(<App />); //runs a virtual dom you can access by 'screen'
-const linkElement = screen.getByRole('link',{name:/learn react/i});
-//'find on screen where \
- //get by text is this regex.You can use actual string too'.
-//this is from react testing library that helps you interact witht
-//the virtual dom
-expect(linkElement).toBeInTheDocument();// assertion is created by
-//jest.expect is a global jest object,
-//and toBeInTheDocument is jest-dom and these matchers
-//gets added in setUpTests.js
-//
-});
-// to see jest custom matchers go to https://github.com/testing-library/jest-dom and scroll at the bottom
-//expect(element.textContent).toBe ('hello')
-//expect(customArray).toHaveLength(7)
-//toBeVisible
-//toBeChecked
 
-//toHaveBeenCalled
-//so jest,there are other test runners too like mocha and jasmine.but
-//jest comes with create-react-app and is preferred by RTL too
-//jest runs in watch mode
+const linkElement = screen.getByRole('link',{name:/learn react/i});
+'find on screen where \
+ get by text is this regex.You can use actual string too'.
+this is from react testing library that helps you interact witht
+the virtual dom
+
+
+expect(linkElement).toBeInTheDocument();// assertion is created by
+jest.expect is a global jest object,
+and toBeInTheDocument is jest-dom and these matchers
+gets added in setUpTests.js
+
+});
+
+
+to see jest custom matchers go to https://github.com/testing-library/jest-dom and scroll at the bottom
+expect(element.textContent).toBe ('hello')
+expect(customArray).toHaveLength(7)
+toBeVisible
+toBeChecked
+
+toHaveBeenCalled
+so jest,there are other test runners too like mocha and jasmine.but
+jest comes with create-react-app and is preferred by RTL too
+jest runs in watch mode
 
 //SEMANTIC ELEMENTS .HOE YOU GET HOLD OF SOMETHING ON SCREEN AS PER W3C
-//how do you access element on the page
-//getByRole-mostly used for interactive element.this should be ur first try.like getByRole('button',{name:/submit/i})
-//getByLabelText-like in forms
-//getByPlaceHolderText-placeholders
-//getByText-not useful in forms.But mostly used for non interactive elements]\
+how do you access element on the page
+getByRole-mostly used for interactive element.this should be ur first try.like getByRole('button',{name:/submit/i})
+getByLabelText-like in forms
+getByPlaceHolderText-placeholders
+getByText-not useful in forms.But mostly used for non interactive elements]\
 
-//if non OF ABOVE is possible.
-//getByAltText-USED FOR ALT FOR image,area,input.
+if non OF ABOVE is possible.
+getByAltText-USED FOR ALT FOR image,area,input.
 
-//ur last resort bcoz user cant see them and screen reader
-//cant read them.should be getByTestId-(like where text is dynamic)
+ur last resort bcoz user cant see them and screen reader
+cant read them.should be getByTestId-(like where text is dynamic)
 
 SCREEN QUERY METHODS
 
